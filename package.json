@@ -1,14 +1,18 @@
 {
   "name": "react-component-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Declarative version of React.Component.",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component",
-    "start":
-      "watch -p '{src/**/*.js,README.md,templates/*.html}' -c 'echo \"$(cat templates/header.html) $(render-markdown-js README.md) $(cat templates/footer.html)\" > index.html'"
+    "start": "watch -p '{src/**/*.js,README.md,templates/*.html}' -c 'echo \"$(cat templates/header.html) $(render-markdown-js README.md) $(cat templates/footer.html)\" > index.html'"
   },
   "peerDependencies": {
     "react": "15.x || ^16.0.0"
@@ -23,9 +27,11 @@
   },
   "author": "Ryan Florence",
   "license": "MIT",
-  "repository":
-    "https://github.com/ryanflorence/react-component-component",
-  "keywords": ["react-component", "react"],
+  "repository": "https://github.com/ryanflorence/react-component-component",
+  "keywords": [
+    "react-component",
+    "react"
+  ],
   "prettier": {
     "printWidth": 62
   }
