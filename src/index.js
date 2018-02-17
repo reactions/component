@@ -70,7 +70,7 @@ class Component extends React.Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    if (this.props.willReceiveProps) {
+    if (this.props.willUpdate) {
       throw new Error(
         "Very sorry, but this lifecycle hook is bad news for the future of React, please use `didUpdate`."
       );
