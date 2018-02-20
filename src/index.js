@@ -56,7 +56,7 @@ class Component extends React.Component {
   componentWillMount() {
     if (this.props.willMount) {
       throw new Error(
-        "Very sorry, but this lifecycle hook is bad news, use `didMount` instead."
+        "Very sorry, but this lifecycle hook is bad news for the future of React, use `didMount` instead."
       );
     }
   }
