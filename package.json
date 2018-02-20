@@ -1,6 +1,6 @@
 {
   "name": "react-component-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Declarative version of React.Component.",
   "main": "lib/index.js",
   "module": "es/index.js",
