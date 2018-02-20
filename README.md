@@ -117,8 +117,9 @@ ReactDOM.render(
 You know all of these already:
 
 * `didMount({ state, setState, props, forceUpdate })`
-* `didUpdate({ state, setState, props, forceUpdate, prevProps, prevState })`
 * `shouldUpdate({ state, props, nextProps, nextState })`
+* `didUpdate({ state, setState, props, forceUpdate, prevProps, prevState })`
+* `willUnmount({ state, props })`
 * `children({ state, setState, props, forceUpdate })`
 * `render({ state, setState, props, forceUpdate })`
 

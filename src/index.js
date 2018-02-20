@@ -1,4 +1,5 @@
 import React from "react";
+import invariant from "invariant";
 
 class Component extends React.Component {
   state = this.props.initialState;
@@ -8,12 +9,17 @@ class Component extends React.Component {
   _forceUpdate = (...args) => this.forceUpdate(...args);
 
   getArgs() {
-    const { state, props } = this;
+    const {
+      state,
+      props,
+      _setState: setState,
+      _forceUpdate: forceUpdate
+    } = this;
     return {
       state,
       props,
-      setState: this._setState,
-      forceUpdate: this._forceUpdate
+      setState,
+      forceUpdate
     };
   }
 
@@ -25,11 +31,20 @@ class Component extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     if (this.props.shouldUpdate)
       return this.props.shouldUpdate({
-        ...this.getArgs(),
+        props: this.props,
+        state: this.state,
         nextProps,
         nextState
       });
     else return true;
+  }
+
+  componentWillUnmount() {
+    if (this.props.willUnmount)
+      this.props.willUnmount({
+        state: this.state,
+        props: this.props
+      });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -54,27 +69,24 @@ class Component extends React.Component {
   // Fiber collateral damage starts here...
 
   componentWillMount() {
-    if (this.props.willMount) {
-      throw new Error(
-        "Very sorry, but this lifecycle hook is bad news for the future of React, use `didMount` instead."
-      );
-    }
+    invariant(
+      !this.props.willMount,
+      "<Component> Please use `didMount` instead of `willMount`."
+    );
   }
 
   componentWillReceiveProps(nextProps, nextState) {
-    if (this.props.willReceiveProps) {
-      throw new Error(
-        "Very sorry, but this lifecycle hook is bad news for the future of React, if you’re trying to cache state, consider using a lodash.memoize, otherwise you want `didUpdate`."
-      );
-    }
+    invariant(
+      !this.props.willReceiveProps,
+      "<Component> Please use `didUpdate` instead of `willReceiveProps`."
+    );
   }
 
   componentWillUpdate(nextProps, nextState) {
-    if (this.props.willUpdate) {
-      throw new Error(
-        "Very sorry, but this lifecycle hook is bad news for the future of React, please use `didUpdate`."
-      );
-    }
+    invariant(
+      !this.props.willUpdate,
+      "<Component> Please use `didUpdate` instead of `willReceiveProps`."
+    );
   }
 }
 
