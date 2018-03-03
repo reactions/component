@@ -23,8 +23,7 @@ And then import it:
 import Component from "react-component-component";
 
 // common.js
-const Component = require("react-component-component")
-  .default;
+const Component = require("react-component-component");
 
 // AMD
 // I've forgotten but it should work.
@@ -39,7 +38,7 @@ Or use script tags and globals.
 And then grab it off the global like so:
 
 ```js
-const Component = ReactComponentComponent.default;
+const Component = ReactComponentComponent;
 ```
 
 ## How?
@@ -48,7 +47,7 @@ Let's say you want some async data but don't want to make a whole new component 
 
 ```render-babel
 // import Component from 'react-component-component'
-const Component = ReactComponentComponent.default;
+const Component = ReactComponentComponent;
 
 ReactDOM.render(
   <div>
@@ -83,7 +82,7 @@ seems a bit heavy:
 
 ```render-babel
 // import Component from 'react-component-component'
-const Component = ReactComponentComponent.default;
+const Component = ReactComponentComponent;
 
 ReactDOM.render(
   <Component initialState={{ count: 0 }}>

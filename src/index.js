@@ -1,11 +1,8 @@
 import React from "react";
-import invariant from "invariant";
 
 class Component extends React.Component {
   state = this.props.initialState;
-
   _setState = (...args) => this.setState(...args);
-
   _forceUpdate = (...args) => this.forceUpdate(...args);
 
   getArgs() {
@@ -49,11 +46,12 @@ class Component extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.didUpdate)
-      this.props.didUpdate({
-        ...this.getArgs(),
-        prevProps,
-        prevState
-      });
+      this.props.didUpdate(
+        Object.assign(this.getArgs(), {
+          prevProps,
+          prevState
+        })
+      );
   }
 
   render() {

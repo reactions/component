@@ -122,8 +122,7 @@ yarn add react-component-component
 <span class="token keyword">import</span> Component <span class="token keyword">from</span> <span class="token string">"react-component-component"</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// common.js</span>
-<span class="token keyword">const</span> Component <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"react-component-component"</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Component <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"react-component-component"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// AMD</span>
 <span class="token comment" spellcheck="true">// I've forgotten but it should work.</span>
@@ -132,12 +131,12 @@ yarn add react-component-component
 <pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/react-component-component<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>And then grab it off the global like so:</p>
-<pre><code class="language-js"><span class="token keyword">const</span> Component <span class="token operator">=</span> ReactComponentComponent<span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">;</span>
+<pre><code class="language-js"><span class="token keyword">const</span> Component <span class="token operator">=</span> ReactComponentComponent<span class="token punctuation">;</span>
 </code></pre>
 <h2 id="how"><a class="header-anchor" href="#how" aria-hidden="true">#</a> How?</h2>
 <p>Let's say you want some async data but don't want to make a whole new component just for the lifecycles to get it:</p>
 <pre class="render-js-code"><code class="jsx"><span class="token comment" spellcheck="true">// import Component from 'react-component-component'</span>
-<span class="token keyword">const</span> Component <span class="token operator">=</span> ReactComponentComponent<span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Component <span class="token operator">=</span> ReactComponentComponent<span class="token punctuation">;</span>
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
@@ -166,11 +165,11 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   DOM_NODE
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<div id="render-6i0nc7cab8g" class="render-js"></div>
+<div id="render-2h2q3cgjmvo" class="render-js"></div>
 <script type="text/babel">
-(function() { var DOM_NODE = document.getElementById("render-6i0nc7cab8g");
+(function() { var DOM_NODE = document.getElementById("render-2h2q3cgjmvo");
 // import Component from 'react-component-component'
-const Component = ReactComponentComponent.default;
+const Component = ReactComponentComponent;
 
 ReactDOM.render(
   <div>
@@ -204,7 +203,7 @@ ReactDOM.render(
 <p>Or maybe you need a little bit of state but an entire component
 seems a bit heavy:</p>
 <pre class="render-js-code"><code class="jsx"><span class="token comment" spellcheck="true">// import Component from 'react-component-component'</span>
-<span class="token keyword">const</span> Component <span class="token operator">=</span> ReactComponentComponent<span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Component <span class="token operator">=</span> ReactComponentComponent<span class="token punctuation">;</span>
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Component</span> <span class="token attr-name">initialState</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> count<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span>
@@ -232,11 +231,11 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   DOM_NODE
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<div id="render-cd51rtsa1jo" class="render-js"></div>
+<div id="render-edlakmlmnmg" class="render-js"></div>
 <script type="text/babel">
-(function() { var DOM_NODE = document.getElementById("render-cd51rtsa1jo");
+(function() { var DOM_NODE = document.getElementById("render-edlakmlmnmg");
 // import Component from 'react-component-component'
-const Component = ReactComponentComponent.default;
+const Component = ReactComponentComponent;
 
 ReactDOM.render(
   <Component initialState={{ count: 0 }}>
