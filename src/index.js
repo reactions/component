@@ -65,29 +65,6 @@ class Component extends React.Component {
       return null;
     }
   }
-
-  // Fiber collateral damage starts here...
-
-  componentWillMount() {
-    invariant(
-      !this.props.willMount,
-      "<Component> Please use `didMount` instead of `willMount`."
-    );
-  }
-
-  componentWillReceiveProps(nextProps, nextState) {
-    invariant(
-      !this.props.willReceiveProps,
-      "<Component> Please use `didUpdate` instead of `willReceiveProps`."
-    );
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    invariant(
-      !this.props.willUpdate,
-      "<Component> Please use `didUpdate` instead of `willReceiveProps`."
-    );
-  }
 }
 
 export default Component;
