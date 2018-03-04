@@ -56,7 +56,6 @@ class Component extends React.Component {
 
   render() {
     const { children, render } = this.props;
-    console.log("yooo");
     return children
       ? typeof children === "function"
         ? children(this.getArgs())
