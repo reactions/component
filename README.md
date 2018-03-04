@@ -45,7 +45,7 @@ const Component = ReactComponentComponent;
 
 Let's say you want some async data but don't want to make a whole new component just for the lifecycles to get it:
 
-```render-babel
+```jsx
 // import Component from 'react-component-component'
 const Component = ReactComponentComponent;
 
