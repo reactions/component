@@ -55,13 +55,13 @@ class Component extends React.Component {
   }
 
   render() {
-    if (this.props.children) {
-      return this.props.children(this.getArgs());
-    } else if (this.props.render) {
-      return this.props.render(this.getArgs());
-    } else {
-      return null;
-    }
+    const { children, render } = this.props;
+    console.log("yooo");
+    return children
+      ? typeof children === "function"
+        ? children(this.getArgs())
+        : children
+      : render ? render(this.getArgs()) : null;
   }
 }
 
