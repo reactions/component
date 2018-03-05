@@ -47,7 +47,7 @@ Let's say you want some async data but don't want to make a whole new component 
 
 ```render-babel
 // import Component from '@reactions/component'
-const Component = ReactComponentComponent;
+const Component = ReactionsComponent;
 
 ReactDOM.render(
   <div>
@@ -82,7 +82,7 @@ seems a bit heavy:
 
 ```render-babel
 // import Component from '@reactions/component'
-const Component = ReactComponentComponent;
+const Component = ReactionsComponent;
 
 ReactDOM.render(
   <Component initialState={{ count: 0 }}>
