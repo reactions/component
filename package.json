@@ -1,10 +1,14 @@
 {
   "name": "@reactions/component",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Declarative Version of React.Component",
   "main": "index.js",
   "module": "es/index.js",
-  "files": ["es", "index.js", "umd"],
+  "files": [
+    "es",
+    "index.js",
+    "umd"
+  ],
   "scripts": {
     "build": "node build/build.js"
   },
@@ -46,7 +50,11 @@
     "type": "git",
     "url": "git+https://github.com/reactions/component.git"
   },
-  "keywords": ["react", "component", "react component"],
+  "keywords": [
+    "react",
+    "component",
+    "react component"
+  ],
   "prettier": {
     "printWidth": 72
   },
