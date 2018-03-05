@@ -1,4 +1,4 @@
-# React Component ... Component
+# Reactions Component
 
 ## What?
 
@@ -11,19 +11,19 @@ Because sometimes you want a lifecycle or some state but don't want to create a 
 ## Installation
 
 ```bash
-npm install react-component-component
+npm install @reactions/component
 # or
-yarn add react-component-component
+yarn add @reactions/component
 ```
 
 And then import it:
 
 ```js
 // using es modules
-import Component from "react-component-component";
+import Component from '@reactions/component';
 
 // common.js
-const Component = require("react-component-component");
+const Component = require('@reactions/component');
 
 // AMD
 // I've forgotten but it should work.
@@ -32,7 +32,7 @@ const Component = require("react-component-component");
 Or use script tags and globals.
 
 ```html
-<script src="https://unpkg.com/react-component-component"></script>
+<script src="https://unpkg.com/@reactions/component"></script>
 ```
 
 And then grab it off the global like so:
@@ -46,7 +46,7 @@ const Component = ReactComponentComponent;
 Let's say you want some async data but don't want to make a whole new component just for the lifecycles to get it:
 
 ```render-babel
-// import Component from 'react-component-component'
+// import Component from '@reactions/component'
 const Component = ReactComponentComponent;
 
 ReactDOM.render(
@@ -81,7 +81,7 @@ Or maybe you need a little bit of state but an entire component
 seems a bit heavy:
 
 ```render-babel
-// import Component from 'react-component-component'
+// import Component from '@reactions/component'
 const Component = ReactComponentComponent;
 
 ReactDOM.render(
