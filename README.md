@@ -20,10 +20,10 @@ And then import it:
 
 ```js
 // using es modules
-import Component from '@reactions/component';
+import Component from "@reactions/component";
 
 // common.js
-const Component = require('@reactions/component');
+const Component = require("@reactions/component");
 
 // AMD
 // I've forgotten but it should work.
@@ -38,7 +38,7 @@ Or use script tags and globals.
 And then grab it off the global like so:
 
 ```js
-const Component = ReactComponentComponent;
+const Component = ReactionsComponent;
 ```
 
 ## How?
