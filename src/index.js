@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class Component extends React.Component {
   static propTypes = {
     initialState: PropTypes.object,
+    willMount: PropTypes.func,
     didMount: PropTypes.func,
     willUnmount: PropTypes.func,
     shouldUpdate: PropTypes.func,
@@ -13,7 +14,7 @@ class Component extends React.Component {
   };
   
   state = this.props.initialState;
-  _setState = (...args) => this.setState(...args);
+  _setState = (...args) => this.setState(...args);g
   _forceUpdate = (...args) => this.forceUpdate(...args);
 
   getArgs() {
@@ -24,6 +25,10 @@ class Component extends React.Component {
       setState,
       forceUpdate,
     };
+  }
+
+  componentWillMount() {
+    if (this.props.willMount) this.props.willMount(this.getArgs());
   }
 
   componentDidMount() {
