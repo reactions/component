@@ -1,6 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Component extends React.Component {
+  static propTypes = {
+    initialState: PropTypes.object,
+    didMount: PropTypes.func,
+    willUnmount: PropTypes.func,
+    shouldUpdate: PropTypes.func,
+    didUpdate: PropTypes.func,
+    render: PropTypes.func,
+    children: PropTypes.func
+  };
+  
   state = this.props.initialState;
   _setState = (...args) => this.setState(...args);
   _forceUpdate = (...args) => this.forceUpdate(...args);
