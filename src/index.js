@@ -14,7 +14,7 @@ class Component extends React.Component {
   };
   
   state = this.props.initialState;
-  _setState = (...args) => this.setState(...args);g
+  _setState = (...args) => this.setState(...args);
   _forceUpdate = (...args) => this.forceUpdate(...args);
 
   getArgs() {
