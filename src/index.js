@@ -10,7 +10,11 @@ class Component extends React.Component {
     shouldUpdate: PropTypes.func,
     didUpdate: PropTypes.func,
     render: PropTypes.func,
-    children: PropTypes.func
+    children: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.object,
+      PropTypes.array
+    ])
   };
   
   state = this.props.initialState;
