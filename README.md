@@ -115,6 +115,7 @@ ReactDOM.render(
 
 You know all of these already:
 
+* `willMount({ state, setState, props, forceUpdate })`
 * `didMount({ state, setState, props, forceUpdate })`
 * `shouldUpdate({ state, props, nextProps, nextState })`
 * `didUpdate({ state, setState, props, forceUpdate, prevProps, prevState })`
