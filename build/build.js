@@ -35,6 +35,11 @@ exec('rollup -c -f umd -o umd/reactions-component.min.js', {
   NODE_ENV: 'production',
 });
 
+console.log('\nPlacing TypeScript definitions ...');
+
+exec('cp src/index.d.ts .')
+exec('cp src/index.d.ts es')
+
 const size = gzipSize.sync(fs.readFileSync('umd/reactions-component.min.js'));
 
 console.log('\ngzipped, the UMD build is %s', prettyBytes(size));

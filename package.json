@@ -3,6 +3,7 @@
   "version": "2.0.2",
   "description": "Declarative Version of React.Component",
   "main": "index.js",
+  "typings": "index.d.ts",
   "module": "es/index.js",
   "files": [
     "es",
@@ -15,7 +16,11 @@
   "peerDependencies": {
     "react": "15.x || 16.x"
   },
+  "optionalDependencies": {
+    "@types/react": "15.x || 16.x"
+  },
   "devDependencies": {
+    "@types/react": "^16.0.40",
     "babel-cli": "^6.26.0",
     "babel-core": "^6",
     "babel-eslint": "^7.2.3",

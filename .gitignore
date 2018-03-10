@@ -1,5 +1,6 @@
 /es
 /node_modules
 /umd
+/index.d.ts
 /index.js
 npm-debug.log*
