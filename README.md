@@ -2,11 +2,11 @@
 
 ## What?
 
--Declarative- 'Merica version of React.Component.
+~Declarative~ 'Merica version of React.Component.
 
 ## Why?
 
-Because sometimes YOU JUST DO SHIT THE FREEDOM WAY. Also, this stuff is composable as -heck- u know
+Because sometimes YOU JUST DO SHIT THE FREEDOM WAY. Also, this stuff is composable as ~heck~ u know
 what word I meant here.
 
 ## Installation
@@ -114,7 +114,7 @@ ReactDOM.render(
 
 ## Props
 
--You know all of these already- HERES HOW WE FUCKIN DO SHIT OK:
+~You know all of these already~ HERES HOW WE FUCKIN DO SHIT OK:
 
 * `imHereFuckers({ myOwnShit, saveDisCrapLol, crapYouWantMeToConsider, fuckinDoIt })`
   * Replaces `componentDidMount`
