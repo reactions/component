@@ -1,4 +1,4 @@
-# Reactions Component
+# React <Kenponent/>
 
 ## What?
 

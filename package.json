@@ -1,6 +1,6 @@
 {
   "name": "react-kenponent",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Declarative Version of React.Component",
   "main": "index.js",
   "module": "es/index.js",
