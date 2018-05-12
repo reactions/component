@@ -2,28 +2,29 @@
 
 ## What?
 
-Declarative version of React.Component.
+-Declarative- 'Merica version of React.Component.
 
 ## Why?
 
-Because sometimes you want a lifecycle or some state but don't want to create a new component. Also, this stuff is composable as heck.
+Because sometimes YOU JUST DO SHIT THE FREEDOM WAY. Also, this stuff is composable as -heck- u know
+what word I meant here.
 
 ## Installation
 
 ```bash
-npm install @reactions/component
+npm install react-kenponent
 # or
-yarn add @reactions/component
+yarn add react-kenponent
 ```
 
 And then import it:
 
 ```js
 // using es modules
-import Component from "@reactions/component";
+import Kenponent from "react-kenponent";
 
 // common.js
-const Component = require("@reactions/component");
+const Kenponent = require("react-kenponent");
 
 // AMD
 // I've forgotten but it should work.
@@ -32,13 +33,13 @@ const Component = require("@reactions/component");
 Or use script tags and globals.
 
 ```html
-<script src="https://unpkg.com/@reactions/component"></script>
+<script src="https://unpkg.com/react-kenponent"></script>
 ```
 
 And then grab it off the global like so:
 
 ```js
-const Component = ReactionsComponent;
+const Kenponent = ReactKenponent;
 ```
 
 ## How?
@@ -46,24 +47,24 @@ const Component = ReactionsComponent;
 Let's say you want some async data but don't want to make a whole new component just for the lifecycles to get it:
 
 ```render-babel
-// import Component from '@reactions/component'
-const Component = ReactComponentComponent;
+// import Kenponent from 'react-kenponent'
+const Kenponent = ReactKenponent;
 
 ReactDOM.render(
   <div>
     <h2>Let's get some gists!</h2>
-    <Component
-      initialState={{ gists: null }}
-      didMount={({ setState }) => {
+    <Kenponent
+      startedFromTheBottom={{ gists: null }}
+      imHereFuckers={({ saveDisCrapLol }) => {
         fetch("https://api.github.com/gists")
           .then(res => res.json())
-          .then(gists => setState({ gists }));
+          .then(gists => saveDisCrapLol({ gists }));
       }}
     >
-      {({ state }) =>
-        state.gists ? (
+      {({ myOwnShit }) =>
+        myOwnShit.gists ? (
           <ul>
-            {state.gists.map(gist => (
+            {myOwnShit.gists.map(gist => (
               <li key={gist.id}>{gist.description}</li>
             ))}
           </ul>
@@ -71,7 +72,7 @@ ReactDOM.render(
           <div>Loading...</div>
         )
       }
-    </Component>
+    </Kenponent>
   </div>,
   DOM_NODE
 );
@@ -81,49 +82,66 @@ Or maybe you need a little bit of state but an entire component
 seems a bit heavy:
 
 ```render-babel
-// import Component from '@reactions/component'
-const Component = ReactComponentComponent;
+// import Kenponent from 'react-kenponent'
+const Kenponent = ReactKenponent;
 
 ReactDOM.render(
-  <Component initialState={{ count: 0 }}>
-    {({ setState, state }) => (
+  <Kenponent initialState={{ count: 0 }}>
+    {({ saveDisCrapLol, myOwnShit }) => (
       <div>
         <h2>Every app needs a counter!</h2>
         <button
           onClick={() =>
-            setState(state => ({ count: state.count - 1 }))
+            saveDisCrapLol(myOwnShit => ({ count: myOwnShit.count - 1 }))
           }
         >
           -
         </button>
-        <span> {state.count} </span>
+        <span> {myOwnShit.count} </span>
         <button
           onClick={() =>
-            setState(state => ({ count: state.count + 1 }))
+            saveDisCrapLol(myOwnShit => ({ count: myOwnShit.count + 1 }))
           }
         >
           +
         </button>
       </div>
     )}
-  </Component>,
+  </Kenponent>,
   DOM_NODE
 );
 ```
 
 ## Props
 
-You know all of these already:
+-You know all of these already- HERES HOW WE FUCKIN DO SHIT OK:
 
-* `didMount({ state, setState, props, forceUpdate })`
-* `shouldUpdate({ state, props, nextProps, nextState })`
-* `didUpdate({ state, setState, props, forceUpdate, prevProps, prevState })`
-* `willUnmount({ state, props })`
-* `children({ state, setState, props, forceUpdate })`
-* `render({ state, setState, props, forceUpdate })`
+* `imHereFuckers({ myOwnShit, saveDisCrapLol, crapYouWantMeToConsider, fuckinDoIt })`
+  * Replaces `componentDidMount`
+* `shouldIDoShit({ myOwnShit, crapYouWantMeToConsider, newChoresUgh, myNewNew })`
+  * Replaces `shouldComponentUpdate`
+* `didSomeShitYo({ myOwnShit, saveDisCrapLol, crapYouWantMeToConsider, fuckinDoIt, urOldCrapYouWanted, myOldShit })`
+  * Replaces `componentDidUpdate`
+* `imOutFuckers({ myOwnShit, crapYouWantMeToConsider })`
+  * Replaces `componentWillUnmount`
+* `daKidz({ myOwnShit, saveDisCrapLol, crapYouWantMeToConsider, fuckinDoIt })`
+  * Replaces `props.children`
+* `doSomeShit({ myOwnShit, saveDisCrapLol, crapYouWantMeToConsider, fuckinDoIt })`
+  * Replaces `render`
+
+ALSO THERE WAS A BUNCH OF BORING CRAP NAMES WE CHANGED:
+* `state` is `myOwnShit`
+* Those `props` you gave me? `crapYouWantMeToConsider`
+* `nextProps` zzzz more like `newChoresUgh`
+* `nextState` AWE YEE its `myNewNew`
+* We don't `setState` we `saveDisCrapLol`
+* `forceUpdate` is the pussy way of saying `fuckinDoit`
+* `prevState` more like `myOldShit`
+* `prevProps` ugggh how about `urOldCrapYouWanted`
+* `initialState` gotta be a ref to `startedFromTheBottom` NOW WE HERE
 
 ## Legal
 
 Released under MIT license.
 
-Copyright &copy; 2017-present Ryan Florence
+Copyright &copy; 2017-present LORD KENNETH ALDRIDGE WHEELINGTON III 🇺🇸 🐉

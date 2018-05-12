@@ -1,5 +1,5 @@
 {
-  "name": "@reactions/component",
+  "name": "react-kenponent",
   "version": "2.0.2",
   "description": "Declarative Version of React.Component",
   "main": "index.js",
@@ -44,11 +44,11 @@
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^3.0.0"
   },
-  "author": "Ryan Florence",
+  "author": "LORD KENNETH ALDRIDGE WHEELINGTON III 🇺🇸 🐉 ",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactions/component.git"
+    "url": "git+https://github.com/sprjr/component.git"
   },
   "keywords": [
     "react",
@@ -62,7 +62,7 @@
     "extends": "react-app"
   },
   "bugs": {
-    "url": "https://github.com/reactions/component/issues"
+    "url": "https://github.com/sprjr/component/issues"
   },
-  "homepage": "https://github.com/reactions/component#readme"
+  "homepage": "https://github.com/sprjr/component#readme"
 }
