@@ -16,11 +16,11 @@ class Component extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.didMount) this.props.didMount(this.getArgs());
+    typeof this.props.didMount === 'function' && this.props.didMount(this.getArgs());
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if (this.props.shouldUpdate)
+    if (typeof this.props.shouldUpdate === 'function')
       return this.props.shouldUpdate({
         props: this.props,
         state: this.state,
@@ -52,7 +52,7 @@ class Component extends React.Component {
     const {children, render} = this.props;
     return children
       ? typeof children === 'function' ? children(this.getArgs()) : children
-      : render ? render(this.getArgs()) : null;
+      : typeof render === 'function' ? render(this.getArgs()) : null;
   }
 }
 
