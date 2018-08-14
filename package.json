@@ -1,5 +1,5 @@
 {
-  "name": "@reactions/component",
+  "name": "@jbarzegar/component",
   "version": "2.0.2",
   "description": "Declarative Version of React.Component",
   "main": "index.js",
@@ -48,7 +48,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactions/component.git"
+    "url": "git+https://github.com/jbarzegar/component.git"
   },
   "keywords": [
     "react",
@@ -62,7 +62,10 @@
     "extends": "react-app"
   },
   "bugs": {
-    "url": "https://github.com/reactions/component/issues"
+    "url": "https://github.com/jbarzegar/component/issues"
   },
-  "homepage": "https://github.com/reactions/component#readme"
+  "homepage": "https://github.com/jbarzegar/component#readme",
+  "dependencies": {
+    "lodash.curry": "4.1.1"
+  }
 }
