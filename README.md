@@ -1,29 +1,32 @@
-# Reactions Component
+# Jbarzegar Component
+
+A Fork of ![https://github.com/reactions/component](reactions/component)
 
 ## What?
 
 Declarative version of React.Component.
+Which also allows users to make "class methods"
 
 ## Why?
 
-Because sometimes you want a lifecycle or some state but don't want to create a new component. Also, this stuff is composable as heck.
+Because sometimes you want a lifecycle, class methods or some state but don't want to create a new component. Also, this stuff is composable as heck.
 
 ## Installation
 
 ```bash
-npm install @reactions/component
+npm install @jbarzegar/component
 # or
-yarn add @reactions/component
+yarn add @jbarzegar/component
 ```
 
 And then import it:
 
 ```js
 // using es modules
-import Component from "@reactions/component";
+import Component from "@jbarzegar/component";
 
 // common.js
-const Component = require("@reactions/component");
+const Component = require("@jbarzegar/component");
 
 // AMD
 // I've forgotten but it should work.
@@ -32,7 +35,7 @@ const Component = require("@reactions/component");
 Or use script tags and globals.
 
 ```html
-<script src="https://unpkg.com/@reactions/component"></script>
+<script src="https://unpkg.com/@jbarzegar/component"></script>
 ```
 
 And then grab it off the global like so:
@@ -45,8 +48,8 @@ const Component = ReactionsComponent;
 
 Let's say you want some async data but don't want to make a whole new component just for the lifecycles to get it:
 
-```render-babel
-// import Component from '@reactions/component'
+```jsx
+// import Component from '@jbarzegar/component'
 const Component = ReactComponentComponent;
 
 ReactDOM.render(
@@ -80,7 +83,7 @@ ReactDOM.render(
 Or maybe you need a little bit of state but an entire component
 seems a bit heavy:
 
-```render-babel
+```jsx
 // import Component from '@reactions/component'
 const Component = ReactComponentComponent;
 
@@ -111,6 +114,32 @@ ReactDOM.render(
 );
 ```
 
+Orrr you want to write some functions
+
+```jsx
+import Component from '@jbarzegar/Component'
+
+<Component
+  initialState={{
+    count: 0
+  }}
+  handlers={{
+    increment: ({ setState, state }, ...params) =>
+      setState({ count: state.count + 1 }),
+    decrement: ({ state, setState }, ...params) =>
+      setState({ count: state.count - 1 })
+  }}
+>
+  {({ handlers, state }) => (
+    <div>
+      <h1>{state.count}</h1>
+      <button onClick={handlers.decrement}>-</button>
+      <button onClick={handlers.increment}>+</button>
+    </div>
+  )}
+</Component>
+```
+
 ## Props
 
 You know all of these already:
@@ -121,6 +150,11 @@ You know all of these already:
 * `willUnmount({ state, props })`
 * `children({ state, setState, props, forceUpdate })`
 * `render({ state, setState, props, forceUpdate })`
+* `handlers({ state, setState, props, forceUpdate }, ...params)`
+
+### Some notes on `handlers`
+
+It must be an object
 
 ## Legal
 

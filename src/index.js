@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Component extends React.Component {
   state = this.props.initialState;
@@ -6,13 +6,31 @@ class Component extends React.Component {
   _forceUpdate = (...args) => this.forceUpdate(...args);
 
   getArgs() {
-    const {state, props, _setState: setState, _forceUpdate: forceUpdate} = this;
-    return {
+    const {
+      state,
+      props,
+      _setState: setState,
+      _forceUpdate: forceUpdate
+    } = this;
+
+    const args = {
       state,
       props,
       setState,
-      forceUpdate,
+      forceUpdate
     };
+    if (this.props.methods) {
+      args["methods"] = Object.entries(this.props.methods).reduce(
+        (prev, [name, fn]) => {
+          prev[name] = (...params) =>
+            fn({ state, props, setState }, ...params);
+          return prev;
+        },
+        {}
+      );
+    }
+
+    return args;
   }
 
   componentDidMount() {
@@ -25,7 +43,7 @@ class Component extends React.Component {
         props: this.props,
         state: this.state,
         nextProps,
-        nextState,
+        nextState
       });
     else return true;
   }
@@ -34,7 +52,7 @@ class Component extends React.Component {
     if (this.props.willUnmount)
       this.props.willUnmount({
         state: this.state,
-        props: this.props,
+        props: this.props
       });
   }
 
@@ -43,15 +61,17 @@ class Component extends React.Component {
       this.props.didUpdate(
         Object.assign(this.getArgs(), {
           prevProps,
-          prevState,
-        }),
+          prevState
+        })
       );
   }
 
   render() {
-    const {children, render} = this.props;
+    const { children, render } = this.props;
     return children
-      ? typeof children === 'function' ? children(this.getArgs()) : children
+      ? typeof children === "function"
+        ? children(this.getArgs())
+        : children
       : render ? render(this.getArgs()) : null;
   }
 }
