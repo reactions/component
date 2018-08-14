@@ -4,13 +4,12 @@
   "description": "Declarative Version of React.Component",
   "main": "index.js",
   "module": "es/index.js",
-  "files": [
-    "es",
-    "index.js",
-    "umd"
-  ],
+  "files": ["es", "index.js", "umd"],
   "scripts": {
     "build": "node build/build.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "peerDependencies": {
     "react": "15.x || 16.x"
@@ -50,11 +49,7 @@
     "type": "git",
     "url": "git+https://github.com/jbarzegar/component.git"
   },
-  "keywords": [
-    "react",
-    "component",
-    "react component"
-  ],
+  "keywords": ["react", "component", "react component"],
   "prettier": {
     "printWidth": 72
   },

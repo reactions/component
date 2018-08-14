@@ -1,6 +1,6 @@
 # Jbarzegar Component
 
-A Fork of ![https://github.com/reactions/component](reactions/component)
+A Fork of [reactions/component](https://github.com/reactions/component)
 
 ## What?
 
@@ -84,7 +84,7 @@ Or maybe you need a little bit of state but an entire component
 seems a bit heavy:
 
 ```jsx
-// import Component from '@reactions/component'
+// import Component from '@jbarzegar/component'
 const Component = ReactComponentComponent;
 
 ReactDOM.render(
