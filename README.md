@@ -114,7 +114,7 @@ ReactDOM.render(
 );
 ```
 
-Orrr you want towrite some functions
+Orrr you want to write some functions
 
 ```jsx
 import Component from '@jbarzegar/Component'
