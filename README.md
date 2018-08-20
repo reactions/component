@@ -114,7 +114,7 @@ ReactDOM.render(
 );
 ```
 
-Orrr you want to write some functions
+Orrr you want towrite some functions
 
 ```jsx
 import Component from '@jbarzegar/Component'
@@ -123,18 +123,18 @@ import Component from '@jbarzegar/Component'
   initialState={{
     count: 0
   }}
-  handlers={{
+  methods={{
     increment: ({ setState, state }, ...params) =>
       setState({ count: state.count + 1 }),
     decrement: ({ state, setState }, ...params) =>
       setState({ count: state.count - 1 })
   }}
 >
-  {({ handlers, state }) => (
+  {({ methods, state }) => (
     <div>
       <h1>{state.count}</h1>
-      <button onClick={handlers.decrement}>-</button>
-      <button onClick={handlers.increment}>+</button>
+      <button onClick={methods.decrement}>-</button>
+      <button onClick={methods.increment}>+</button>
     </div>
   )}
 </Component>
@@ -150,9 +150,9 @@ You know all of these already:
 * `willUnmount({ state, props })`
 * `children({ state, setState, props, forceUpdate })`
 * `render({ state, setState, props, forceUpdate })`
-* `handlers({ state, setState, props, forceUpdate }, ...params)`
+* `methods({ state, setState, props, forceUpdate }, ...params)`
 
-### Some notes on `handlers`
+### Some notes on `methods`
 
 It must be an object
 
