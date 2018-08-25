@@ -1,32 +1,29 @@
-# Jbarzegar Component
-
-A Fork of [reactions/component](https://github.com/reactions/component)
+# Reactions Component
 
 ## What?
 
 Declarative version of React.Component.
-Which also allows users to make "class methods"
 
 ## Why?
 
-Because sometimes you want a lifecycle, class methods or some state but don't want to create a new component. Also, this stuff is composable as heck.
+Because sometimes you want a lifecycle or some state but don't want to create a new component. Also, this stuff is composable as heck.
 
 ## Installation
 
 ```bash
-npm install @jbarzegar/component
+npm install @reactions/component
 # or
-yarn add @jbarzegar/component
+yarn add @reactions/component
 ```
 
 And then import it:
 
 ```js
 // using es modules
-import Component from "@jbarzegar/component";
+import Component from "@reactions/component";
 
 // common.js
-const Component = require("@jbarzegar/component");
+const Component = require("@reactions/component");
 
 // AMD
 // I've forgotten but it should work.
@@ -35,7 +32,7 @@ const Component = require("@jbarzegar/component");
 Or use script tags and globals.
 
 ```html
-<script src="https://unpkg.com/@jbarzegar/component"></script>
+<script src="https://unpkg.com/@reactions/component"></script>
 ```
 
 And then grab it off the global like so:
@@ -48,8 +45,8 @@ const Component = ReactionsComponent;
 
 Let's say you want some async data but don't want to make a whole new component just for the lifecycles to get it:
 
-```jsx
-// import Component from '@jbarzegar/component'
+```render-babel
+// import Component from '@reactions/component'
 const Component = ReactComponentComponent;
 
 ReactDOM.render(
@@ -83,8 +80,8 @@ ReactDOM.render(
 Or maybe you need a little bit of state but an entire component
 seems a bit heavy:
 
-```jsx
-// import Component from '@jbarzegar/component'
+```render-babel
+// import Component from '@reactions/component'
 const Component = ReactComponentComponent;
 
 ReactDOM.render(
@@ -114,9 +111,9 @@ ReactDOM.render(
 );
 ```
 
-Orrr you want to write some functions
+Or you want to write some methods
 
-```jsx
+```render-babel
 import Component from '@jbarzegar/Component'
 
 <Component
