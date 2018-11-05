@@ -1,5 +1,7 @@
 # Reactions Component
 
+This has moved to [Reach UI](https://ui.reach.tech/component-component)
+
 ## What?
 
 Declarative version of React.Component.
