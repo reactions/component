@@ -1,6 +1,6 @@
 # Reactions Component
 
-This has moved to [Reach UI](https://ui.reach.tech/component-component)
+This has moved to [Reach UI](https://ui.reach.tech/component-component), but this repo is here for the sake of history I guess.
 
 ## What?
 
