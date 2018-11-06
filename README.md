@@ -47,7 +47,7 @@ const Component = ReactionsComponent;
 
 Let's say you want some async data but don't want to make a whole new component just for the lifecycles to get it:
 
-```render-babel
+```jsx
 // import Component from '@reactions/component'
 const Component = ReactComponentComponent;
 
@@ -82,7 +82,7 @@ ReactDOM.render(
 Or maybe you need a little bit of state but an entire component
 seems a bit heavy:
 
-```render-babel
+```jsx
 // import Component from '@reactions/component'
 const Component = ReactComponentComponent;
 
