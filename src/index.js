@@ -1,6 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Component extends React.Component {
+  static propTypes = {
+    initialState: PropTypes.object,
+    willMount: PropTypes.func,
+    didMount: PropTypes.func,
+    willUnmount: PropTypes.func,
+    shouldUpdate: PropTypes.func,
+    didUpdate: PropTypes.func,
+    render: PropTypes.func,
+    children: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.object,
+      PropTypes.array
+    ])
+  };
+  
   state = this.props.initialState;
   _setState = (...args) => this.setState(...args);
   _forceUpdate = (...args) => this.forceUpdate(...args);
@@ -13,6 +29,10 @@ class Component extends React.Component {
       setState,
       forceUpdate,
     };
+  }
+
+  componentWillMount() {
+    if (this.props.willMount) this.props.willMount(this.getArgs());
   }
 
   componentDidMount() {
@@ -49,10 +69,14 @@ class Component extends React.Component {
   }
 
   render() {
-    const {children, render} = this.props;
-    return children
-      ? typeof children === 'function' ? children(this.getArgs()) : children
-      : render ? render(this.getArgs()) : null;
+    const { children, render } = this.props;
+    if (children) {
+      return typeof children === 'function' ? children(this.getArgs()) : children
+    }
+    if (render) {
+      return render(this.getArgs());
+    }
+    return null;
   }
 }
 

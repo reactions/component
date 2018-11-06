@@ -64,5 +64,8 @@
   "bugs": {
     "url": "https://github.com/reactions/component/issues"
   },
-  "homepage": "https://github.com/reactions/component#readme"
+  "homepage": "https://github.com/reactions/component#readme",
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  }
 }
