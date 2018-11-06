@@ -1,58 +1,72 @@
 import React from 'react';
 
 class Component extends React.Component {
-  state = this.props.initialState;
+  state = this.props.startedFromTheBottom;
   _setState = (...args) => this.setState(...args);
   _forceUpdate = (...args) => this.forceUpdate(...args);
 
-  getArgs() {
-    const {state, props, _setState: setState, _forceUpdate: forceUpdate} = this;
+  getKenArgs() {
+    const {
+      state: myOwnShit,
+      props: crapYouWantMeToConsider,
+      _setState: saveDisCrapLol,
+      _forceUpdate: fuckinDoIt
+    } = this;
+
     return {
-      state,
-      props,
-      setState,
-      forceUpdate,
+      myOwnShit,
+      crapYouWantMeToConsider,
+      saveDisCrapLol,
+      fuckinDoIt,
     };
   }
 
+  // props.imHereFuckers({ myOwnShit, saveDisCrapLol, crapYouWantMeToConsider, fuckinDoIt })
   componentDidMount() {
-    if (this.props.didMount) this.props.didMount(this.getArgs());
+    if (this.props.imHereFuckers) this.props.imHereFuckers(this.getKenArgs());
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (this.props.shouldUpdate)
-      return this.props.shouldUpdate({
-        props: this.props,
-        state: this.state,
-        nextProps,
-        nextState,
+  // props.shouldIDoShit({ myOwnShit, crapYouWantMeToConsider, newChoresUgh, myNewNew })
+  shouldComponentUpdate(newChoresUgh, myNewNew) {
+    if (this.props.shouldIDoShit)
+      return this.props.shouldIDoShit({
+        crapYouWantMeToConsider: this.props,
+        newChoresUgh,
+        myOwnShit: this.state,
+        myNewNew,
       });
     else return true;
   }
 
+  // props.imOutFuckers({ myOwnShit, crapYouWantMeToConsider })
   componentWillUnmount() {
-    if (this.props.willUnmount)
-      this.props.willUnmount({
-        state: this.state,
-        props: this.props,
+    if (this.props.imOutFuckers)
+      this.props.imOutFuckers({
+        myOwnShit: this.state,
+        crapYouWantMeToConsider: this.props,
       });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.props.didUpdate)
-      this.props.didUpdate(
-        Object.assign(this.getArgs(), {
-          prevProps,
-          prevState,
+  // props.didSomeShitYo({ myOwnShit, saveDisCrapLol, crapYouWantMeToConsider, fuckinDoIt, urOldCrapYouWanted, myOldShit })
+  componentDidUpdate(urOldCrapYouWanted, myOldShit) {
+    if (this.props.didSomeShitYo)
+      this.props.didSomeShitYo(
+        Object.assign(this.getKenArgs(), {
+          urOldCrapYouWanted,
+          myOldShit,
         }),
       );
   }
 
+  // props.doSomeShit({ myOwnShit, saveDisCrapLol, crapYouWantMeToConsider, fuckinDoIt })
+  // or props.daKidz({ myOwnShit, saveDisCrapLol, crapYouWantMeToConsider, fuckinDoIt })
+  // (which is really children in JSX land how original)
   render() {
-    const {children, render} = this.props;
-    return children
-      ? typeof children === 'function' ? children(this.getArgs()) : children
-      : render ? render(this.getArgs()) : null;
+    const {children: daKidz, doSomeShit} = this.props;
+
+    return daKidz
+      ? (typeof daKidz === 'function' ? daKidz(this.getKenArgs()) : daKidz)
+      : (doSomeShit ? doSomeShit(this.getKenArgs()) : null);
   }
 }
 

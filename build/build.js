@@ -23,18 +23,18 @@ exec('babel src -d es --ignore *.test.js', {
 
 console.log('\nBuilding UMD ...');
 
-exec('rollup -c -f umd -o umd/reactions-component.js', {
+exec('rollup -c -f umd -o umd/react-kenponent.js', {
   BABEL_ENV: 'umd',
   NODE_ENV: 'development',
 });
 
 console.log('\nBuilding UMD min.js ...');
 
-exec('rollup -c -f umd -o umd/reactions-component.min.js', {
+exec('rollup -c -f umd -o umd/react-kenponent.min.js', {
   BABEL_ENV: 'umd',
   NODE_ENV: 'production',
 });
 
-const size = gzipSize.sync(fs.readFileSync('umd/reactions-component.min.js'));
+const size = gzipSize.sync(fs.readFileSync('umd/react-kenponent.min.js'));
 
 console.log('\ngzipped, the UMD build is %s', prettyBytes(size));

@@ -7,7 +7,7 @@ import resolve from 'rollup-plugin-node-resolve';
 const config = {
   input: 'src/index.js',
   output: {
-    name: 'ReactionsComponent',
+    name: 'ReactKenponent',
     globals: {
       react: 'React',
     },
